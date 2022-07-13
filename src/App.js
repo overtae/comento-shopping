@@ -8,7 +8,7 @@ import styled from "styled-components";
 function App() {
   return (
     <Container>
-      <BrowserRouter basename="comento-shopping">
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Content>
           <Routes>
             <Route path="/" element={<Home />} />
