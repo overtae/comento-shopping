@@ -4,20 +4,25 @@ import ProductDetailMenu from "../components/ProductDetailMenu";
 import ProductDetailImage from "../components/ProductDetailImage";
 import ProductInfo from "../components/ProductInfo";
 
-import { useParams } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getProductDetail } from "../data/mockData";
 
 const ProductDetail = () => {
   let { productId } = useParams();
+  const [product, setProduct] = useState();
+
+  useEffect(() => {
+    const result = getProductDetail(productId);
+    setProduct(result);
+    console.log(productId);
+  }, [productId]);
 
   return (
     <div>
       <Navigation text="코멘토 쇼핑" isBackButton={true} />
 
-      <ProductInfo
-        thumbnail="https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product1.jpg"
-        name="비숑 블랙 머그잔"
-        price="21,800원"
-      />
+      {product && <ProductInfo thumbnail={product.thumbnail} name={product.name} price={product.price} />}
 
       <ProductDetailMenu />
 
