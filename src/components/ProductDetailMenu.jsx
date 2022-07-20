@@ -1,11 +1,15 @@
 import styled from "styled-components";
 import { SemiBoldText, MediumText } from "../GlobalTextStyle";
 
-const ProductDetailMenu = () => {
+const ProductDetailMenu = ({ setActiveMenu, activeMenu }) => {
   return (
     <Menus>
-      <Menu selected={true}>상품 설명</Menu>
-      <Menu>상품 후기</Menu>
+      <Menu onClick={() => setActiveMenu("description")} active={activeMenu === "description"}>
+        상품 설명
+      </Menu>
+      <Menu onClick={() => setActiveMenu("reviews")} active={activeMenu === "reviews"}>
+        상품 후기
+      </Menu>
     </Menus>
   );
 };
@@ -22,8 +26,8 @@ const Menu = styled.div`
   justify-content: center;
   width: 195px;
   height: 48px;
-  background: ${(props) => (props.selected === true ? "#eee" : "#fff")};
-  ${(props) => (props.selected === true ? SemiBoldText : MediumText)};
+  background: ${(props) => (props.active === true ? "#eee" : "#fff")};
+  ${(props) => (props.active === true ? SemiBoldText : MediumText)};
   cursor: pointer;
 `;
 
