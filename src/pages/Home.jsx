@@ -37,7 +37,9 @@ const Home = () => {
         <ProductSection>
           {/* 자바스크립트 map()을 사용해 mockData list를 화면에 노출 */}
           {products ? (
-            products.map((product) => <ProductCard thumbnail={product.thumbnail} name={product.name} description={product.description} />)
+            products.map((product) => (
+              <ProductCard key={product.id} thumbnail={product.thumbnail} name={product.name} description={product.description} />
+            ))
           ) : (
             <div>테마를 선택해주세요.</div>
           )}
