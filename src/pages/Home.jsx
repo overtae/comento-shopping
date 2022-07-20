@@ -4,10 +4,16 @@ import ProductCard from "../components/ProductCard";
 import { mockTheme1Produdcts, mockTheme2Produdcts } from "../data/mockData";
 
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
   const [products, setProducts] = useState();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setProducts(mockTheme1Produdcts);
+    }, 1000);
+  }, []);
 
   const onClickThemeButton = (themeId) => {
     if (themeId === 1) {
