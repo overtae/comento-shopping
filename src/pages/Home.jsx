@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <div>
       <div>
-        <Navigation text="코멘토 쇼핑" isBackButton={false} />
+        <Navigation text="코멘토 쇼핑" />
         <ThemeSection>
           <ThemeButton themeName="따순머그컵" onClick={() => onClickThemeButton(1)} />
           <ThemeButton themeName="여름엔바로" onClick={() => onClickThemeButton(2)} />

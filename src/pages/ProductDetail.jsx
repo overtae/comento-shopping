@@ -5,12 +5,13 @@ import ProductDetailImage from "../components/ProductDetailImage";
 import ProductInfo from "../components/ProductInfo";
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getProductDetail } from "../data/mockData";
 
 const ProductDetail = () => {
   let { productId } = useParams();
   const [product, setProduct] = useState();
+  let navigate = useNavigate();
 
   useEffect(() => {
     const result = getProductDetail(productId);
@@ -20,7 +21,7 @@ const ProductDetail = () => {
 
   return (
     <div>
-      <Navigation text="코멘토 쇼핑" isBackButton={true} />
+      <Navigation text="코멘토 쇼핑" goBack={() => navigate(-1)} />
 
       {product && <ProductInfo thumbnail={product.thumbnail} name={product.name} price={product.price} />}
 

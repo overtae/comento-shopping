@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { FiChevronLeft } from "react-icons/fi";
 
-const Navigation = ({ text, isBackButton }) => {
+const Navigation = ({ text, goBack }) => {
   return (
     <NavigationStyled>
-      {isBackButton && (
-        <BackButton>
+      {goBack && (
+        <BackButton onClick={goBack}>
           <FiChevronLeft size={"24px"} />
         </BackButton>
       )}
