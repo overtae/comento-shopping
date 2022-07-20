@@ -5,9 +5,11 @@ import { mockTheme1Produdcts, mockTheme2Produdcts } from "../data/mockData";
 
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [products, setProducts] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setTimeout(() => {
@@ -38,7 +40,13 @@ const Home = () => {
           {/* 자바스크립트 map()을 사용해 mockData list를 화면에 노출 */}
           {products ? (
             products.map((product) => (
-              <ProductCard key={product.id} thumbnail={product.thumbnail} name={product.name} description={product.description} />
+              <ProductCard
+                onClick={() => navigate(`product/${product.id}`)}
+                key={product.id}
+                thumbnail={product.thumbnail}
+                name={product.name}
+                description={product.description}
+              />
             ))
           ) : (
             <div>테마를 선택해주세요.</div>

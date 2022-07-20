@@ -4,7 +4,11 @@ import ProductDetailMenu from "../components/ProductDetailMenu";
 import ProductDetailImage from "../components/ProductDetailImage";
 import ProductInfo from "../components/ProductInfo";
 
+import { useParams } from "react";
+
 const ProductDetail = () => {
+  let { productId } = useParams();
+
   return (
     <div>
       <Navigation text="코멘토 쇼핑" isBackButton={true} />
