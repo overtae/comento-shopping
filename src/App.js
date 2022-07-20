@@ -4,11 +4,13 @@ import ProductDetail from "./pages/ProductDetail";
 import Basket from "./pages/Basket";
 import "./App.css";
 import styled from "styled-components";
+import ScrollToTop from "./ScrollRestoration";
 
 function App() {
   return (
     <Container>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <ScrollToTop />
         <Content>
           <Routes>
             <Route path="/" element={<Home />} />
