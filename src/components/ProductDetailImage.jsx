@@ -10,8 +10,9 @@ const ProductDetailImage = ({ image }) => {
 
 const ImageBox = styled.div`
   padding: 24px;
-  width: 342px;
-  height: 1200px;
+  img {
+    width: 100%;
+  }
 `;
 
 export default ProductDetailImage;

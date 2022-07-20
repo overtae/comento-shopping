@@ -27,7 +27,7 @@ const ProductDetail = () => {
 
       <ProductDetailMenu />
 
-      <ProductDetailImage image="" />
+      <ProductDetailImage image={product?.mainImage} />
 
       <BottomButton text="장바구니 담기" />
     </div>
