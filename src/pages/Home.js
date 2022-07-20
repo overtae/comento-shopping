@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <div>
-        <Navigation text="코멘토 쇼핑" back={false} />
+        <Navigation text="코멘토 쇼핑" isBackButton={false} />
         <ThemeSection>
           <ThemeButton themeName="겨울_방한템" />
           <ThemeButton themeName="따순머그컵" />

@@ -7,7 +7,7 @@ import ProductInfo from "../components/ProductInfo";
 const ProductDetail = () => {
   return (
     <div>
-      <Navigation text="코멘토 쇼핑" back={true} />
+      <Navigation text="코멘토 쇼핑" isBackButton={true} />
 
       <ProductInfo
         thumbnail="https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product1.jpg"

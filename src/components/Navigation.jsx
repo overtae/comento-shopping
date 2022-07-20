@@ -2,15 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { FiChevronLeft } from "react-icons/fi";
 
-const Navigation = ({ text, back }) => {
+const Navigation = ({ text, isBackButton }) => {
   return (
     <NavigationStyled>
-      {back === true ? (
+      {isBackButton && (
         <BackButton>
           <FiChevronLeft size={"24px"} />
         </BackButton>
-      ) : (
-        <React.Fragment />
       )}
       <div>{text}</div>
     </NavigationStyled>
