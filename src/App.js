@@ -29,5 +29,5 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  width: 390px;
+  max-width: 390px;
 `;
