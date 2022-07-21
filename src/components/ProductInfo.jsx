@@ -2,12 +2,13 @@ import styled from "styled-components";
 import { BoldText, MediumText } from "../GlobalTextStyle";
 
 const ProductInfo = ({ name, price, thumbnail }) => {
+  const formattedPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return (
     <div>
       <Thumbnail src={thumbnail} alt={name} />
       <TextBox>
         <h3>{name}</h3>
-        <div>{price}</div>
+        <div>{formattedPrice} 원</div>
       </TextBox>
     </div>
   );
