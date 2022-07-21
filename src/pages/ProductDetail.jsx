@@ -8,6 +8,7 @@ import Review from "../components/Review";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getProductDetail, mockReviews } from "../data/mockData";
+import styled from "styled-components";
 
 const ProductDetail = () => {
   let { productId } = useParams();
@@ -31,7 +32,7 @@ const ProductDetail = () => {
       {activeMenu === "description" && <ProductDetailImage image={product?.mainImage} />}
 
       {activeMenu === "reviews" && (
-        <div>
+        <ReviewBox>
           {mockReviews.map((review) => (
             <Review
               key={review.id}
@@ -42,12 +43,16 @@ const ProductDetail = () => {
               reviewText={review.reviewText}
             />
           ))}
-        </div>
+        </ReviewBox>
       )}
 
       <BottomButton text="장바구니 담기" />
     </div>
   );
 };
+
+const ReviewBox = styled.div`
+  padding: 0 24px 70px 24px;
+`;
 
 export default ProductDetail;
