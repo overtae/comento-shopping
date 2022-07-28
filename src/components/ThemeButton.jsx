@@ -15,6 +15,7 @@ const ThemeButtonStyled = styled.div`
   width: fit-content;
   padding: 24px 16px;
   border-radius: 10px;
+  cursor: pointer;
 
   /* Font Style */
   color: #fff;

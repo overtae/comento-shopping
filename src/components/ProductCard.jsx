@@ -14,6 +14,7 @@ const ProductCardStyled = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+  cursor: pointer;
 `;
 
 const Thumbnail = styled.img`
