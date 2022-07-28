@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { SemiBoldText } from "../GlobalTextStyle";
 
-const BottomButton = ({ text }) => {
-  return <BottomButtonStyled>{text}</BottomButtonStyled>;
+const BottomButton = ({ onClick, text }) => {
+  return <BottomButtonStyled onClick={onClick}>{text}</BottomButtonStyled>;
 };
 
 const BottomButtonStyled = styled.div`

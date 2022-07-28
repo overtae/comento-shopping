@@ -4,6 +4,7 @@ import ProductDetailMenu from "../components/ProductDetailMenu";
 import ProductDetailImage from "../components/ProductDetailImage";
 import ProductInfo from "../components/ProductInfo";
 import Review from "../components/Review";
+import * as storage from "../utils/storage";
 
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
@@ -20,6 +21,11 @@ const ProductDetail = () => {
     const result = getProductDetail(productId);
     setProduct(result);
   }, [productId]);
+
+  const onClickAddBasketButton = () => {
+    storage.addItemToBasket(product);
+    navigate("/basket");
+  };
 
   return (
     <div>
@@ -46,7 +52,7 @@ const ProductDetail = () => {
         </ReviewBox>
       )}
 
-      <BottomButton text="장바구니 담기" />
+      <BottomButton onClick={onClickAddBasketButton} text="장바구니 담기" />
     </div>
   );
 };
