@@ -15,3 +15,10 @@ export const addItemToBasket = (product) => {
     localStorage.setItem(BASKET, JSON.stringify(items));
   }
 };
+
+export const removeBasketItem = (productId) => {
+  let items = getBasketItems();
+  items = items.filter((item) => item.id !== productId);
+  localStorage.removeItem(BASKET);
+  localStorage.setItem(BASKET, JSON.stringify(items));
+};
