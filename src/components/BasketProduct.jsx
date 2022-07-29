@@ -42,9 +42,11 @@ const DeleteButton = styled.div`
 const ProductImage = styled.div`
   width: 120px;
   height: 100px;
+  background-size: cover;
 `;
 
 const ProductInfo = styled.div`
+  width: calc(100% - 140px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
