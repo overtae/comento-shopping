@@ -6,12 +6,14 @@ import { useState, useEffect } from "react";
 import * as storage from "../utils/storage";
 import BasketPrice from "../components/BasketPrice";
 import styled from "styled-components";
+import OrderPopup from "../components/OrderPopup";
 
 const DELIVERYFEE = 3000;
 
 const Basket = () => {
   const [basketItems, setBasketItems] = useState();
   const [basketItemCount, setBasketItemCount] = useState(0);
+  const [isOrder, setIsOrder] = useState(false);
   const discountPrice = null;
   let [totalPrice, setTotalPrice] = useState(0);
   let navigate = useNavigate();
@@ -34,8 +36,13 @@ const Basket = () => {
     setBasketItemCount(basketItemCount - 1);
   };
 
+  const onClickOrderButton = () => {
+    setIsOrder((current) => !current);
+  };
+
   return (
     <div>
+      {isOrder && <OrderPopup />}
       <Navigation text="장바구니" goBack={() => navigate(-1)} />
 
       <BasketItemsStyled>
@@ -53,7 +60,7 @@ const Basket = () => {
 
       <BasketPrice itemCount={basketItemCount} totalPrice={totalPrice} discountPrice={discountPrice} deliveryFee={DELIVERYFEE} />
 
-      <BottomButton text="주문하기" />
+      <BottomButton text="주문하기" onClick={onClickOrderButton} />
     </div>
   );
 };
