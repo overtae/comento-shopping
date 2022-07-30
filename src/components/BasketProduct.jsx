@@ -3,6 +3,7 @@ import { FiX } from "react-icons/fi";
 import { BoldText, MediumText } from "../GlobalTextStyle";
 
 const BasketProduct = ({ thumbnail, name, price, onClickRemoveButton }) => {
+  const formattedPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return (
     <>
       <BasketProductStyled>
@@ -11,7 +12,7 @@ const BasketProduct = ({ thumbnail, name, price, onClickRemoveButton }) => {
             <ProductImage style={{ backgroundImage: `url(${thumbnail})` }} />
             <ProductInfo>
               <div>{name}</div>
-              <div>{price} 원</div>
+              <div>{formattedPrice} 원</div>
             </ProductInfo>
           </RowLayout>
           <DeleteButton onClick={onClickRemoveButton}>
